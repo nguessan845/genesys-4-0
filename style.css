@@ -1,0 +1,400 @@
+/* Genesys_4.0 — styles. N'emploie que les jetons de tokens.css. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police-texte);
+  font-size: var(--corps);
+  line-height: var(--ligne);
+  font-weight: var(--graisse-texte);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: var(--lien); text-underline-offset: 3px; }
+strong { font-weight: var(--graisse-forte); }
+
+:focus-visible { outline: var(--trait-fort) solid var(--focus); outline-offset: 3px; }
+
+.conteneur {
+  width: 100%;
+  max-width: var(--largeur-max);
+  margin-inline: auto;
+  padding-inline: var(--gouttiere);
+}
+.conteneur--texte > * { max-width: var(--largeur-texte); }
+
+/* ---------- Typographie ---------- */
+.etiquette {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-forte);
+  font-size: var(--taille-etiquette);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+  margin-bottom: var(--esp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+}
+.etiquette::before {
+  content: "";
+  width: var(--esp-5);
+  height: var(--trait-fort);
+  background: currentColor;
+  flex: none;
+}
+.etiquette--sombre { color: var(--etiquette-vitrine); }
+
+.titre-2 {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-titre-2);
+  line-height: var(--ligne-titre);
+  letter-spacing: -.01em;
+  max-width: 22ch;
+}
+.titre-2--large { max-width: 28ch; }
+.titre-3 {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-forte);
+  font-size: var(--taille-titre-3);
+  line-height: 1.25;
+  margin-bottom: var(--esp-2);
+}
+
+/* ---------- En-tête ---------- */
+.entete {
+  background: var(--fond-vitrine);
+  color: var(--texte-vitrine);
+  border-bottom: var(--trait) solid var(--bordure-vitrine);
+}
+.entete__ligne {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-4);
+  min-height: var(--hauteur-bouton);
+}
+.marque {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-titre-3);
+  letter-spacing: -.01em;
+}
+.marque__version { background: var(--action); color: var(--texte-sur-action); padding: 0 var(--esp-1); margin-left: 2px; border-radius: var(--rayon-petit); }
+.entete__etab {
+  font-size: var(--taille-etiquette);
+  color: var(--texte-doux-vitrine);
+  text-align: right;
+  line-height: 1.3;
+}
+
+/* ---------- Bouton ---------- */
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-3);
+  min-height: var(--hauteur-bouton);
+  padding: var(--esp-3) var(--esp-6);
+  background: var(--action);
+  color: var(--texte-sur-action);
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--corps);
+  text-decoration: none;
+  border-radius: var(--rayon-petit);
+  border: var(--trait-fort) solid var(--texte-sur-action);
+  transition: background-color var(--duree-survol) var(--courbe);
+}
+.bouton:hover { background: var(--action-survol); }
+.bouton:active { background: var(--action-appuye); }
+.bouton:focus-visible { outline-color: var(--texte); }
+.bouton__icone {
+  width: var(--esp-5);
+  height: var(--esp-5);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  flex: none;
+}
+.bouton--plein { width: 100%; }
+
+/* ---------- 1. Haut de page ---------- */
+.ouverture {
+  background: var(--fond-vitrine);
+  color: var(--texte-vitrine);
+  padding-block: var(--esp-6) var(--esp-7);
+  border-bottom: var(--trait) solid var(--bordure-vitrine);
+}
+.ouverture__grille { display: grid; gap: var(--esp-6); }
+.ouverture__titre {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-titre-1);
+  line-height: 1.04;
+  letter-spacing: -.02em;
+  margin-bottom: var(--esp-4);
+  max-width: 16ch;
+}
+.ouverture__sous-titre {
+  color: var(--texte-doux-vitrine);
+  max-width: 46ch;
+  margin-bottom: var(--esp-5);
+}
+.ouverture__prix { margin-bottom: var(--esp-5); }
+.prix { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--esp-2); }
+.prix__avant, .prix__apres { color: var(--texte-doux-vitrine); }
+.prix__montant {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-titre-2);
+  line-height: 1;
+  color: var(--texte-vitrine);
+}
+.prix__note { font-size: var(--taille-petit); color: var(--texte-doux-vitrine); margin-top: var(--esp-1); }
+.ouverture .bouton { width: 100%; }
+.ouverture__contact { margin-top: var(--esp-3); font-size: var(--taille-petit); color: var(--texte-doux-vitrine); }
+
+.ouverture__photo img {
+  border-radius: var(--rayon-grand);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.faits {
+  display: grid;
+  margin-top: var(--esp-7);
+  border-top: var(--trait) solid var(--bordure-vitrine);
+}
+.faits__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+  padding-block: var(--esp-4);
+  border-bottom: var(--trait) solid var(--bordure-vitrine);
+}
+.faits__valeur {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-titre-3);
+  color: var(--texte);
+  box-shadow: inset 0 -0.3em 0 var(--surligne);
+  align-self: flex-start;
+}
+.faits__libelle { color: var(--texte-doux-vitrine); font-size: var(--taille-petit); }
+
+/* ---------- Blocs ---------- */
+.bloc { padding-block: var(--esp-8); }
+.bloc--alterne { background: var(--fond-alterne); }
+.bloc--sombre { background: var(--fond-vitrine); color: var(--texte-vitrine); }
+.bloc--sombre { border-block: var(--trait) solid var(--bordure-vitrine); }
+
+/* 2. Problème */
+.chapeau { margin-top: var(--esp-5); color: var(--texte-doux); font-size: var(--taille-titre-3); line-height: 1.5; }
+.chapeau--fort {
+  color: var(--texte);
+  padding-left: var(--esp-4);
+  border-left: var(--trait-fort) solid var(--bordure-forte);
+}
+
+/* 3. Bénéfices */
+.benefices { margin-top: var(--esp-7); display: grid; border-top: var(--trait-fort) solid var(--bordure-forte); }
+.benefice {
+  display: grid;
+  grid-template-columns: var(--esp-7) 1fr;
+  gap: var(--esp-4);
+  padding-block: var(--esp-5);
+  border-bottom: var(--trait) solid var(--neutre-300);
+}
+.benefice__num {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-titre-3);
+  color: var(--texte-doux);
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+.benefice p { color: var(--texte-doux); }
+.domaines { display: flex; flex-wrap: wrap; gap: var(--esp-2); margin-top: var(--esp-2); }
+.domaines li {
+  border: var(--trait) solid var(--neutre-500);
+  border-radius: var(--rayon-petit);
+  padding: var(--esp-1) var(--esp-3);
+  font-weight: var(--graisse-forte);
+  background: var(--surface);
+}
+
+/* 4. Parcours */
+.parcours { display: grid; gap: var(--esp-5); margin-top: var(--esp-7); }
+.cycle {
+  background: var(--surface);
+  border: var(--trait) solid var(--neutre-300);
+  border-top: var(--esp-1) solid var(--bordure-forte);
+  border-radius: var(--rayon-grand);
+  padding: var(--esp-5);
+}
+.cycle__tete { margin-bottom: var(--esp-4); }
+.cycle__debouche { font-weight: var(--graisse-forte); }
+.cycle__acces { color: var(--texte-doux); font-size: var(--taille-petit); margin-top: var(--esp-1); }
+.tarifs { border-top: var(--trait) solid var(--bordure); }
+.tarifs__ligne {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--esp-4);
+  padding-block: var(--esp-3);
+  border-bottom: var(--trait) solid var(--bordure);
+}
+.tarifs dt { color: var(--texte-doux); }
+.tarifs dd {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.note { margin-top: var(--esp-4); color: var(--texte-doux); font-size: var(--taille-petit); }
+
+/* 5. Preuves */
+.preuve-chiffre { display: grid; gap: var(--esp-3); margin-bottom: var(--esp-7); }
+.preuve-chiffre__valeur {
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-chiffre);
+  line-height: .9;
+  letter-spacing: -.03em;
+  color: var(--texte);
+  box-shadow: inset 0 -0.22em 0 var(--surligne);
+  justify-self: start;
+}
+.preuve-chiffre__texte { color: var(--texte-doux-vitrine); margin-top: var(--esp-3); max-width: 46ch; }
+
+.galerie { display: grid; gap: var(--esp-3); grid-template-columns: 1fr 1fr; }
+.galerie__item--large, .galerie__item:last-child { grid-column: 1 / -1; }
+.galerie img {
+  border-radius: var(--rayon-grand);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+.galerie figcaption {
+  font-size: var(--taille-etiquette);
+  color: var(--texte-doux-vitrine);
+  margin-top: var(--esp-2);
+}
+
+/* 6. Pour qui */
+.pour-qui { display: grid; gap: var(--esp-6); margin-top: var(--esp-6); }
+.liste { display: grid; gap: var(--esp-3); }
+.liste li { position: relative; padding-left: var(--esp-6); }
+.liste li::before {
+  position: absolute;
+  left: 0;
+  top: .1em;
+  width: var(--esp-5);
+  height: var(--esp-5);
+  display: grid;
+  place-items: center;
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-petit);
+  border-radius: var(--rayon-petit);
+}
+.liste--oui li::before { content: "✓"; background: var(--neutre-900); color: var(--neutre-50); }
+.liste--non li::before { content: "✕"; border: var(--trait) solid var(--neutre-500); color: var(--texte-doux); }
+.liste--non li { color: var(--texte-doux); }
+
+/* 7. FAQ */
+.faq { margin-top: var(--esp-6); border-top: var(--trait-fort) solid var(--bordure-forte); }
+.faq__item { border-bottom: var(--trait) solid var(--neutre-300); }
+.faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--esp-4);
+  min-height: var(--hauteur-bouton);
+  padding-block: var(--esp-4);
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-forte);
+  font-size: var(--corps);
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: "+";
+  font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
+  font-size: var(--taille-titre-3);
+  line-height: 1;
+  flex: none;
+}
+.faq__item[open] summary::after { content: "–"; }
+.faq__reponse { padding-bottom: var(--esp-5); color: var(--texte-doux); display: grid; gap: var(--esp-2); }
+
+/* 8. Dernier appel */
+.appel { text-align: left; }
+.appel__contenu { display: grid; gap: var(--esp-5); }
+.appel__texte { color: var(--texte-doux-vitrine); }
+.prix--sombre .prix__avant, .prix--sombre .prix__apres { color: var(--texte-doux-vitrine); }
+.appel .bouton { width: 100%; }
+.appel__numero { color: var(--texte-doux-vitrine); font-size: var(--taille-petit); margin-top: calc(-1 * var(--esp-3)); }
+
+/* 9. Pied de page */
+.pied {
+  background: var(--fond-alterne);
+  color: var(--texte-doux-vitrine);
+  padding-block: var(--esp-7) calc(var(--esp-9) + var(--esp-4));
+  font-size: var(--taille-petit);
+}
+.pied__grille { display: grid; gap: var(--esp-5); }
+.pied strong { color: var(--texte); }
+.pied a { color: var(--texte); }
+.marque--pied { color: var(--texte); margin-bottom: var(--esp-2); }
+.pied__mentions { margin-top: var(--esp-6); padding-top: var(--esp-4); border-top: var(--trait) solid var(--bordure-vitrine); }
+
+/* Barre d'action fixe (téléphone) */
+.barre-action {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--esp-3) var(--gouttiere) calc(var(--esp-3) + env(safe-area-inset-bottom, 0px));
+  background: var(--fond-vitrine);
+  border-top: var(--trait) solid var(--bordure-vitrine);
+  z-index: 10;
+}
+
+/* ---------- Écrans plus larges ---------- */
+@media (min-width: 720px) {
+  :root { --gouttiere: 40px; }
+  .faits { grid-template-columns: repeat(3, 1fr); border-top: 0; }
+  .faits__item { border-bottom: 0; border-left: var(--trait) solid var(--bordure-vitrine); padding: 0 var(--esp-5); }
+  .faits__item:first-child { border-left: 0; padding-left: 0; }
+  .parcours { grid-template-columns: 1fr 1fr; }
+  .pour-qui { grid-template-columns: 1fr 1fr; gap: var(--esp-8); }
+  .galerie { gap: var(--esp-5); }
+  .galerie__item--large, .galerie__item:last-child { grid-column: auto; }
+  .preuve-chiffre { grid-template-columns: auto 1fr; align-items: end; gap: var(--esp-6); }
+  .pied__grille { grid-template-columns: 2fr 1fr; }
+  .ouverture .bouton, .appel .bouton { width: auto; }
+  .benefices { grid-template-columns: 1fr 1fr; column-gap: var(--esp-7); }
+  .barre-action { display: none; }
+  .pied { padding-bottom: var(--esp-7); }
+}
+
+@media (min-width: 1000px) {
+  .ouverture { padding-block: var(--esp-8); }
+  .ouverture__grille { grid-template-columns: 1.15fr 1fr; align-items: center; gap: var(--esp-8); }
+  .bloc { padding-block: var(--esp-9); }
+}

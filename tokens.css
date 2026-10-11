@@ -1,0 +1,107 @@
+/* Genesys_4.0 — jetons d'identité
+   Parti pris : une formation d'ingénieur sérieuse et concrète, où l'on apprend
+   à l'atelier autant qu'en salle de cours. */
+:root {
+  /* Accent — jaune de signalisation industrielle (teinte ~43°), celui du
+     portique de levage des ateliers. Employé uniquement pour l'action. */
+  --accent-50: #FFF9E6;
+  --accent-100: #FEF0C3;
+  --accent-200: #FDE08A;
+  --accent-300: #FBCD4B;
+  --accent-400: #F8BC1F;
+  --accent-500: #EFA90A;
+  --accent-600: #CC8A04;
+  --accent-700: #A26806;
+  --accent-800: #7E500C;
+  --accent-900: #5C3B0E;
+  --accent-950: #36220A;
+
+  /* Neutres teintés chauds (graphite d'atelier), dérivés de la teinte de l'accent */
+  --neutre-50: #FAF8F4;
+  --neutre-100: #F2EFE9;
+  --neutre-200: #E3DED5;
+  --neutre-300: #CBC4B8;
+  --neutre-400: #A39B8D;
+  --neutre-500: #7D7568;
+  --neutre-600: #615A4F;
+  --neutre-700: #4A443B;
+  --neutre-800: #332F29;
+  --neutre-900: #221F1B;
+  --neutre-950: #151310;
+
+  /* Sens */
+  --succes: #3F7A3A;
+  --attention: #A26806;
+  --erreur: #B3361F;
+
+  /* Rôles — clair */
+  --fond: var(--neutre-50);
+  --fond-alterne: var(--neutre-100);
+  --surface: #FFFFFF;
+  --texte: var(--neutre-900);
+  --texte-doux: var(--neutre-600);
+  --bordure: var(--neutre-200);
+  --bordure-forte: var(--neutre-900);
+  --lien: var(--accent-800);
+
+  /* Rôles — sections vitrines (haut de page, preuves, dernier appel).
+     Choix de la personne : clair partout, pas de fond noir. */
+  --fond-vitrine: #FFFFFF;
+  --texte-vitrine: var(--neutre-900);
+  --texte-doux-vitrine: var(--neutre-600);
+  --bordure-vitrine: var(--neutre-200);
+  --surligne: var(--accent-300);   /* trait jaune sous les chiffres clés */
+  --etiquette-vitrine: var(--accent-800);
+
+  /* Action — jaune signalisation, texte graphite (10.78:1) */
+  --action: var(--accent-400);
+  --action-survol: var(--accent-300);
+  --action-appuye: var(--accent-500);
+  --texte-sur-action: var(--neutre-950);
+  --focus: var(--accent-500);
+
+  /* Typographie */
+  --police-titre: "Archivo", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+  --police-texte: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --corps: 17px;
+  --ligne: 1.55;
+  --ligne-titre: 1.1;
+  --taille-petit: 14px;
+  --taille-etiquette: 13px;
+  --taille-titre-3: 21px;
+  --taille-titre-2: clamp(28px, 6vw, 40px);
+  --taille-titre-1: clamp(36px, 9.5vw, 64px);
+  --taille-chiffre: clamp(64px, 18vw, 120px);
+  --graisse-texte: 400;
+  --graisse-forte: 600;
+  --graisse-titre: 800;
+
+  /* Formes — robuste, technique */
+  --rayon-petit: 3px;   /* boutons, étiquettes */
+  --rayon-grand: 8px;   /* cartes, photos */
+  --trait: 1px;
+  --trait-fort: 2px;
+
+  /* Espace — unité 8 px, page aérée */
+  --pas: 8px;
+  --esp-1: 4px;
+  --esp-2: 8px;
+  --esp-3: 12px;
+  --esp-4: 16px;
+  --esp-5: 24px;
+  --esp-6: 32px;
+  --esp-7: 48px;
+  --esp-8: 64px;
+  --esp-9: 96px;
+  --gouttiere: 20px;
+  --largeur-max: 1120px;
+  --largeur-texte: 640px;
+  --hauteur-bouton: 56px;
+
+  /* Séparation au trait : pas d'ombre */
+  --ombre-1: none;
+
+  /* Mouvement */
+  --duree-survol: 150ms;
+  --courbe: cubic-bezier(.2, .6, .2, 1);
+}
